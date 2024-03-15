@@ -33,4 +33,14 @@ class HomeController extends Controller
         return view('home',['productsChart' => $productsChart->build()],
              compact('transactions', 'orders', 'products'));
     }
+    public function setDateTime(Request $request)
+    {
+        // Handle the logic for setting date and time here
+
+        // For example, you can update a variable in the session
+        // with the new date and time
+        $request->session()->put('customDateTime', $request->input('newDateTime'));
+
+        return redirect()->route('home');
+    }
 }

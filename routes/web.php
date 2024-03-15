@@ -27,6 +27,7 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/setDateTime', [HomeController::class, 'setDateTime'])->name('setDateTime');
 
 Route::post('/users/{id}', 'UserController@update')->name('users.update');
 Route::delete('products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
